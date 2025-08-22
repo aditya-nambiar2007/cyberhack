@@ -153,7 +153,7 @@ while(1){
 	usleep(50000);
 	printf("Do you want to play again? (y/n): ");
 	char c4;
-	scanf("%c",&c4);
+	scanf(" %c",&c4);
 	if(c4=='y' || c4=='Y'){
 		printf("Restarting the game...\n\n");
 		points=0;
