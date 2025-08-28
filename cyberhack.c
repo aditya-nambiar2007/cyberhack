@@ -14,7 +14,7 @@ void print(const char *str){
 }
 int main(){
 	srand(time(NULL));	
-	system("clear");
+	system("cls");
 	int points=0;
 while(1){
 	print("1 -> Direct Trace: 50% success rate, +50 security points if successful.\n2 -> Proxy Scan: Always succeeds, +30 security points.\n3 -> Social Engineering: No immediate points, but gives a clue for Stage 2.\n\n");
@@ -65,7 +65,7 @@ while(1){
 		usleep(100000); 
 	}
 	
-	system("clear");
+	system("cls");
 	print("You have ");printf("%d ",points);print("points\n\n");
 	print("You have 3 attempts to guess the secret 3-digit code.\n\n");
 	usleep(500000);
@@ -78,7 +78,8 @@ while(1){
 			points+=100;
 		}
 		else{
-			print("Code Incorrect! + 20 points\n\n");
+			print("Code Incorrect! + 20 points ");
+			print(c2>random ? "(Hint: Try Lower)\n\n" : "(Hint: Try Higher)\n\n");
 			points+=20;
 		}
 		usleep(500000);
@@ -100,7 +101,7 @@ while(1){
 	}
 	
 	sleep(5);
-	system("clear");
+	system("cls");
 	print("You have ");printf("%d ",points);print("points\n\n");
 	print("You must choose a firewall strategy:\n1 -> Quick Lockdown: 70% chance of +80 points, otherwise 0.\n2 -> Layered Defense: Always +50 points.\n3 -> AI Counterattack: 30% chance of +150 points, otherwise -20 points.\n\n");
 	scanf("%d",&c3);
@@ -153,9 +154,11 @@ while(1){
 	usleep(50000);
 	printf("Do you want to play again? (y/n): ");
 	char c4;
-	scanf(" %c",&c4);
+	getchar();
+	scanf("%c",&c4);
 	if(c4=='y' || c4=='Y'){
 		printf("Restarting the game...\n\n");
+		system("cls");
 		points=0;
 		continue;
 	}
